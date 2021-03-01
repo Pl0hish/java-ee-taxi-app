@@ -1,0 +1,50 @@
+<nav class = "navbar sticky-top navbar-inverse">
+    <div class = "container-fluid">
+        <div class = "navbar-header">
+            <a class = "navbar-brand" href = "${pageContext.request.contextPath}/main">Taxi app</a>
+        </div>
+        <ul class = "nav navbar-nav">
+            <c:if test="${userRole == 'ADMIN'}">
+                <li class = "nav-item">
+                    <a class = "nav-link active" href = "${pageContext.request.contextPath}/admin"><fmt:message key="admin" /></a>
+                </li>
+            </c:if>
+            <c:if test="${user != null}">
+                <li class = "nav-item">
+                    <a class = "nav-link active" href = "${pageContext.request.contextPath}/profile"><fmt:message key="profile" /></a>
+                </li>
+            </c:if>
+            <li class = "navbar-header">
+                <a class = "nav-link active" href = "${pageContext.request.contextPath}/prices"><fmt:message key="prices" /></a>
+            </li>
+            <li class = "dropdown">
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "${pageContext.request.contextPath}#"><fmt:message key="language" />
+                    <span class = "caret"></span></a>
+                <ul class = "dropdown-menu">
+                    <li class = "nav-item dropdown">
+                        <a class = "dropdown-item"  href = "<c:url value='${pageContext.request.contextPath}'>
+                                    <c:param name='lang' value='en'/>
+                                </c:url>">
+                                <fmt:message key="lang.eng" /></a>
+                        <a class = "dropdown-item" href = "<c:url value='${pageContext.request.contextPath}'>
+                                    <c:param name='lang' value='uk'/>
+                                </c:url>"><fmt:message key="lang.uk" /></a>
+                    </li>
+                </ul>
+            </li>
+            <c:if test="${user != null}">
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "${pageContext.request.contextPath}/logout"><fmt:message key="logout" /></a>
+                </li>
+            </c:if>
+            <c:if test="${user == null}">
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "${pageContext.request.contextPath}/login"><fmt:message key="login" /></a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "${pageContext.request.contextPath}/registration"><fmt:message key="register" /></a>
+                </li>
+            </c:if>
+        </ul>
+    </div>
+</nav>

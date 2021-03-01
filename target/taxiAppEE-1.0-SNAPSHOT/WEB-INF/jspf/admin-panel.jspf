@@ -1,0 +1,7 @@
+<ul>
+    <li><a href="${pageContext.request.contextPath}/admin/all-orders">
+        <fmt:message key="all.orders" />
+    </a></li>
+    <li><a href="${pageContext.request.contextPath}/admin/all-users"><fmt:message key="all.users" /></a></li>
+    <li><a href="${pageContext.request.contextPath}/admin/all-cars"><fmt:message key="all.cars" /></a></li>
+</ul>

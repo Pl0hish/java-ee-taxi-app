@@ -26,7 +26,6 @@ public class MakeOrderPostCommand extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException, UserException, SQLException {
 
-
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setDepartureAddress(request.getParameter("departureAddress"));
         orderDTO.setDestinationAddress(request.getParameter("destinationAddress"));

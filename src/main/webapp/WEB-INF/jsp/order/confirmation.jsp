@@ -16,7 +16,7 @@
 <%@ include file = "/WEB-INF/jspf/header.jspf"%>
 
 <div class="container">
-    <form class="form-signin" action="${pageContext.request.context Path}/confirmationPage-post" method="POST">
+    <form class="form-signin" action="${pageContext.request.contextPath}/confirmationPage-post" method="POST">
         <table class="table table-bordered caption-top">
             <caption><fmt:message key="your.order" /></caption>
             <tr>
@@ -59,6 +59,10 @@
                 <td>
                     <p>${confirmationOrder.price}</p>
                     <input type="text" readonly="readonly" hidden name="price" value="${confirmationOrder.price}">
+                    <input type="text" readonly="readonly" hidden name="spentMoney" value="${confirmationOrder.passengers}">
+                    <input type="text" readonly="readonly" hidden name="carId" value="${confirmationOrder.carId}">
+                    <input type="text" readonly="readonly" hidden name="userId" value="${confirmationOrder.userId}">
+                    <input type="text" readonly="readonly" hidden name="category" value="${confirmationOrder.category}">
                 </td>
             </tr>
         </table>

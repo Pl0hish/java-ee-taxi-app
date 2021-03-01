@@ -17,12 +17,24 @@ public class ConfirmationCommandPost extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException, SQLException {
 
-        System.out.println("IN ORDER CONFIRMATION POST!!!");
-        Order order = (Order) request.getAttribute("confirmationOrder");
+        Order order;
 
-        if (order == null) {
+        try {
+            order = new Order(
+                    request.getParameter("departureAddress"),
+                    request.getParameter("destinationAddress"),
+                    Double.parseDouble(request.getParameter("price")),
+                    Integer.parseInt(request.getParameter("distance")),
+                    Integer.parseInt(request.getParameter("passengers")),
+                    Double.parseDouble(request.getParameter("spentMoney")),
+
+            );
+
+        } catch (Exception e) {
             return REDIRECT_PAGE_ERROR;
         }
+
+
 
         OrderService.getInstance().saveOrder(order);
 

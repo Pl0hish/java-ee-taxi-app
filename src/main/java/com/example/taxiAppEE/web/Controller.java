@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class Controller extends HttpServlet {
@@ -28,6 +29,11 @@ public class Controller extends HttpServlet {
                          HttpServletResponse response) throws IOException, ServletException {
 
         if (request.getParameter("redirect") != null) {
+
+            if (request.getParameter("redirect").equals("/confirmationPage")) {
+                request.getSession().setAttribute("confirmationOrder", request.getAttribute("confirmationOrder"));
+            }
+
             response.sendRedirect(request.getParameter("redirect"));
             return;
         }

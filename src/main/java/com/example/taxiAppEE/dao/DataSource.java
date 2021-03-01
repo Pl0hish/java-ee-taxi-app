@@ -22,9 +22,9 @@ public class DataSource {
     private static final HikariDataSource ds;
 
     static {
-        config.setJdbcUrl(YOUR DATA HERE);
-        config.setUsername(YOUR DATA HERE);
-        config.setPassword(YOUR DATA HERE);
+        config.setJdbcUrl(YOUR DATA);
+        config.setUsername(YOUR DATA);
+        config.setPassword(YOUR DATA);
         config.addDataSourceProperty("cachePrepStmts" , "true");
         config.addDataSourceProperty("prepStmtCacheSize" , "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit" , "2048");

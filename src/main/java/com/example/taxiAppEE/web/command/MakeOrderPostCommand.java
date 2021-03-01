@@ -56,16 +56,6 @@ public class MakeOrderPostCommand extends Command {
 
         request.setAttribute("confirmationOrder", order);
 
-        request.setAttribute("departureAddress", order.getDepartureAddress());
-        request.setAttribute("destinationAddress", order.getDestinationAddress());
-        request.setAttribute("passengers", order.getPassengers());
-        request.setAttribute("category", order.getCarCategory());
-        request.setAttribute("date", order.getDate());
-        request.setAttribute("carId", order.getCarId());
-        request.setAttribute("distance", order.getDistance());
-        request.setAttribute("userId", order.getUserId());
-        request.setAttribute("price", order.getPrice());
-
         return REDIRECT_PAGE_CONFIRMATION;
     }
 }

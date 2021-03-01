@@ -17,20 +17,16 @@ public class ConfirmationCommand extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
+        Order order = null;
+        try {
+            order = (Order) request.getSession()
+                    .getAttribute("confirmationOrder");
+            request.getSession().removeAttribute("confirmationOrder");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        Order order = new Order();
-
-        order.setDepartureAddress((String) request.getAttribute("departureAddress"));
-
-
-        order.setDestinationAddress(request.getParameter("destinationAddress"));
-        order.setPassengers(Integer.parseInt(request.getParameter("passengers")));
-//        order.setCarCategory(request.getParameter("category"));
-//        order.setDate(request.getParameter("date"));
-//        order.setCarId(request.getParameter("carId"));
-//        order.setDistance(request.getParameter("distance"));
-//        order.setUserId(request.getParameter("userId"));
-//        order.setPrice(request.getParameter("price"));
+        request.setAttribute("confirmationOrder", order);
 
         return PAGE_CONFIRMATION;
     }

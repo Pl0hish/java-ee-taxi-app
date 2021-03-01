@@ -16,7 +16,7 @@
 <%@ include file = "/WEB-INF/jspf/header.jspf"%>
 
 <div class="container">
-    <form class="form-signin" action="${pageContext.request.contextPath}/confirmationPage" method="POST">
+    <form class="form-signin" action="${pageContext.request.contextPath}/confirmationPage-post" method="POST">
         <table class="table table-bordered caption-top">
             <caption><fmt:message key="your.order" /></caption>
             <tr>
@@ -29,15 +29,15 @@
             <tr>
                 <th><fmt:message key="destination.address" /></th>
                 <td>
-                    <p>${confirmationOrder.destinationAddress()}</p>
+                    <p>${confirmationOrder.destinationAddress}</p>
                     <input type="text" readonly="readonly" name="destinationAddress" hidden value="${confirmationOrder.destinationAddress}">
                 </td>
             </tr>
             <tr>
                 <th><fmt:message key="distance" /></th>
                 <td>
-                    <p><fmt:message key="${confirmationOrder.distance}" /></p>
-                    <input type="text" readonly="readonly" name="distance" value="${confirmationOrder.distance}">
+                    <p>${confirmationOrder.distance}</p>
+                    <input type="number" readonly="readonly" name="distance" value="${confirmationOrder.distance}" hidden>
                 </td>
             </tr>
             <tr>

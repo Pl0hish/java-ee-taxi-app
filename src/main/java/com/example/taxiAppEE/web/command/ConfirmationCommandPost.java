@@ -17,6 +17,7 @@ public class ConfirmationCommandPost extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException, SQLException {
 
+        System.out.println("IN ORDER CONFIRMATION POST!!!");
         Order order = (Order) request.getAttribute("confirmationOrder");
 
         if (order == null) {

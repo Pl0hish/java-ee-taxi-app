@@ -16,6 +16,7 @@ public final class Path {
     public static final String PAGE_PROFILE = "/WEB-INF/jsp/user/profile-page.jsp";
     public static final String PAGE_MAKE_ORDER = "/WEB-INF/jsp/order/make-order.jsp";
     public static final String PAGE_CONFIRMATION = "/WEB-INF/jsp/order/confirmation.jsp";
+    public static final String PAGE_SUCCESS = "/WEB-INF/jsp/order/order-success.jsp";
 
 
     // commands
